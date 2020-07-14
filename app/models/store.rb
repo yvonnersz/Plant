@@ -1,4 +1,4 @@
 class Store < ApplicationRecord
-    has_many :plants
-    has_many :customers, through: :plants
+    has_many :indoor_plants
+    has_many :customers, through: :indoor_plants
 end
