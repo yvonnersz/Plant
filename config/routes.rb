@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'sessions#new'
+  get '/' => 'application#welcome'
 
   get '/signup' => 'customers#new'
   post '/signup' => 'customers#create'
