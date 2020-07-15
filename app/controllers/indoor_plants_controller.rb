@@ -1,0 +1,2 @@
+class IndoorPlantsController < ApplicationController
+end
