@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
             session[:customer_id] = @customer.id
             redirect_to @customer
         else
-            flash[:message] = "Invalid username and password."
+            flash[:message] = "Invalid username and password. Please try again."
             redirect_to '/login'
         end
     end
