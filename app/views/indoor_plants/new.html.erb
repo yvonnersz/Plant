@@ -1,0 +1,15 @@
+<h1>Create Indoor Plants</h1>
+
+<%= form_for(@indoor_plants) do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br><br>
+
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+    <br><br>
+    
+    <%= f.submit "Submit" %>
+
+<% end %>
