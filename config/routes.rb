@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   get '/auth/facebook/callback' => 'sessions#fbcreate'
+
+  get '/indoor_plants/:id/buy' => 'indoor_plants#buy'
+  get '/indoor_plants/:id/buy' => 'indoor_plants#buy'
+
   
   resources :customers
   resources :stores

@@ -4,4 +4,4 @@ Price: $<%= @indoor_plant.price %>
 
 <br>
 
-Would you like to buy this plant?
+<%= link_to 'Buy this Plant', "/indoor_plants/#{@indoor_plant.id}/buy" %>
