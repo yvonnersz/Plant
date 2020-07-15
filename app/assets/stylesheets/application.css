@@ -1,5 +1,9 @@
 h1 {
     text-align: center;
+    font-family: 'Indie Flower', cursive;    
+    font-size: 75px;
+    letter-spacing: 3px;
+    margin: 10px;
 }
 
 img {
