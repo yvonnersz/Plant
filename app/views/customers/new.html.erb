@@ -1,22 +1,21 @@
-<h1>Sign Up</h1>
+<h2>Sign Up</h2>
 
+<div class="form">
 <%= form_for(@customer, url:'/signup') do |f| %>
 
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+    <%= f.email_field :email, placeholder: "Email" %>
     <br><br>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, placeholder: "Password" %>
     <br><br>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, placeholder: "First Name" %>
     <br><br>
 
-    <%= f.label :cash %>
-    <%= f.text_field :cash %>
+    <%= f.text_field :cash, placeholder: "Cash" %>
+    <br><br>
     
     <%= f.submit "Submit" %>
 
 <% end %>
+</div>
