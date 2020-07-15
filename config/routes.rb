@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   
   resources :customers
   resources :stores
+  resources :indoor_plants
 
 end
