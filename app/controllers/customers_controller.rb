@@ -1,13 +1,15 @@
 class CustomersController < ApplicationController
+    def index
+        @customers = Customer.all
+    end
+
     def new
         @customer = Customer.new
     end
 
     def create
-        if @customer = Customer.find_by(:email => params[:email])
-            flash[:message] = "This email has already been used."
-        else
-            @customer = Customer.create(customer_params)
+        @customer = Customer.new(customer_params)
+        if @customer.save
             session[:customer_id] = @customer.id
             redirect_to @customer
         end
