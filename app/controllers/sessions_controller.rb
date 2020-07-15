@@ -6,6 +6,15 @@ class SessionsController < ApplicationController
     end
 
     def create
+        if @customer = Customer.find_by(:email => params[:customer][:email])
+            @customer.authenticate(params[:customer][:password])
+        end
+
+        session[:customer_id] = @customer.id
+        redirect_to @customer
+    end
+
+    def fbcreate
         @customer = Customer.find_or_create_by(uid: auth['uid']) do |u|
             u.name = auth['info']['name']
             u.email = auth['info']['email']
