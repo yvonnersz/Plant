@@ -16,7 +16,7 @@ class IndoorPlantsController < ApplicationController
     private
 
     def indoor_plants_params
-        params.require(:indoor_plant).permit(:name, :price, :store_id, :customer_id)
+        params.require(:indoor_plant).permit(:name, :price, :store_id, customer_ids: [])
     end
 
 end

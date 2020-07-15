@@ -28,10 +28,8 @@ ActiveRecord::Schema.define(version: 2020_07_14_084032) do
     t.string "name"
     t.integer "price"
     t.integer "store_id", null: false
-    t.integer "customer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["customer_id"], name: "index_indoor_plants_on_customer_id"
     t.index ["store_id"], name: "index_indoor_plants_on_store_id"
   end
 
@@ -43,6 +41,5 @@ ActiveRecord::Schema.define(version: 2020_07_14_084032) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "indoor_plants", "customers"
   add_foreign_key "indoor_plants", "stores"
 end
