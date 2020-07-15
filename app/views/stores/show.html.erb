@@ -1,1 +1,7 @@
-<%= @store.name %>
+<h1><%= @store.name %></h1>
+
+<h3>Plants Available</h3>
+
+<% @store.indoor_plants.each do |plant| %>
+    <%= link_to plant.name, indoor_plant_path(plant) %><br>
+<% end %>
