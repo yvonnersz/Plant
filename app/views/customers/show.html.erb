@@ -1,9 +1,3 @@
 <h1><%= @customer.name %></h1>
 
-You have <%= @customer.indoor_plants.count %> plants.
-
 You have $<%= @customer.cash %>. Would you like to reload?
-
-<%= @customer.indoor_plants.each do |plant| %>
-    plant.name
-<% end %>
