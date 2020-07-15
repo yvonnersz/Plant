@@ -9,6 +9,9 @@
     <%= f.label :price %>
     <%= f.text_field :price %>
     <br><br>
+
+    <%= f.label :store_id, "Select a Store" %>
+    <%= f.collection_select :store_id, Store.all, :id, :name, prompt: true %>
     
     <%= f.submit "Submit" %>
 

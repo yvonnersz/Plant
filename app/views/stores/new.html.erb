@@ -9,6 +9,9 @@
     <%= f.label :prestige %>
     <%= f.text_field :prestige %>
     <br><br>
+
+    <%= f.label :store_id, "Select a Store" %>
+    <%= f.collection_select :store_id, Store.all, :id, :name %>
     
     <%= f.submit "Submit" %>
 
