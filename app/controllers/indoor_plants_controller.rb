@@ -10,6 +10,7 @@ class IndoorPlantsController < ApplicationController
     end
 
     def show
+        @indoor_plant = IndoorPlant.find_by(:id => params[:id])
     end
 
     private
