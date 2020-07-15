@@ -9,10 +9,12 @@ class SessionsController < ApplicationController
         @customer = Customer.find_by(:email => params[:customer][:email])
         if @customer
             @customer.authenticate(params[:customer][:password])
+            session[:customer_id] = @customer.id
+            redirect_to @customer
+        else
+            flash[:message] = "Invalid username and password."
+            redirect_to '/login'
         end
-
-        session[:customer_id] = @customer.id
-        redirect_to @customer
     end
 
     def fbcreate
@@ -21,7 +23,6 @@ class SessionsController < ApplicationController
             u.email = auth['info']['email']
             u.image = auth['info']['image']
         end
-
         session[:customer_id] = @customer.id
         redirect_to @customer
     end

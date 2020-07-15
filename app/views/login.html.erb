@@ -1,5 +1,9 @@
 <h1>Login</h1>
 
+<div class="error">
+    <p><%= flash[:message] %></p>
+</div>
+
 <%= form_for(@customer, url: '/login') do |f| %>
 
     <%= f.label :email %>
