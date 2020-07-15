@@ -1,4 +1,4 @@
-<h1>Login</h1>
+<h2>Login</h2>
 
 <div class="error">
     <p><%= flash[:message] %></p>
@@ -6,12 +6,10 @@
 
 <%= form_for(@customer, url: '/login') do |f| %>
 
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+    <%= f.email_field :email, placeholder: "Please enter in your email.", required: true %>
     <br><br>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, placeholder: "Please enter in your password.", required: true %>
     <br><br>
     
     <%= f.submit "Submit" %>
