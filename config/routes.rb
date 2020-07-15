@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#fbcreate'
   
   resources :customers
-  resources: stores
+  resources :stores
 
 end
