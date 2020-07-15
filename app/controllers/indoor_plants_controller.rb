@@ -20,8 +20,6 @@ class IndoorPlantsController < ApplicationController
         customer.update(:cash => customer.cash - indoor_plant.price)
 
         redirect_to customer_path(customer)
-
-
     end
 
     private
