@@ -1,15 +1,15 @@
-<h1>Create New Store</h1>
+<div class="form">
 
 <%= form_for(@store) do |f| %>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, placeholder: "Please enter in a shop name." %>
     <br><br>
 
-    <%= f.label :prestige %>
-    <%= f.text_field :prestige %>
+    <%= f.text_field :prestige, placeholder: "Please enter in prestige level." %>
     <br><br>
 
     <%= f.submit "Submit" %>
 
 <% end %>
+
+</div>
