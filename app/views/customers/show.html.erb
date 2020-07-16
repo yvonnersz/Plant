@@ -1,23 +1,22 @@
 <div class="container">
 
-    <div class="customer_info">
+<div class="customer_info">
 
-        <h2><%= @customer.name %></h2>
+    <h2>Hi, <%= @customer.name %>.</h2>
 
-        You have $<%= @customer.cash %>. Would you like to reload?
-        <br><br>
+    <p>You have $<%= @customer.cash %>. Would you like to reload?</p>
 
-        What would you like to do?<br>
-        <%= link_to 'Browse Shops', stores_path %><br>
-        <%= link_to 'Log Out', '/logout' %><br>
+    <p>Create a Store</p>
+    You own x many plants.
+    <br><br>
 
-    </div>
+</div>
 
-    <div class="customer_plants">
-        <h2>Owned Plants</h2>
-        <% @customer.indoor_plants.each do |plant| %>
-            <%= plant.name %>
-        <% end %>
-    </div>
+<div class="customer_plant">
+    <h2>Owned Plants</h2>
+    <% @customer.indoor_plants.each do |plant| %>
+        <%= plant.name %><br>
+    <% end %>
+</div>
 
 </div>

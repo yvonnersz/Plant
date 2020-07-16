@@ -34,22 +34,6 @@ input {
     text-align: center;
 }
 
-div.customer_info {
-    float: left;
-    width: 25%;
-    text-align: center;
-    border: 0.5px solid black;
-    margin: 10px;
-}
-
-div.customer_plants {
-    float: right;
-    width: 70%;
-    text-align: center;
-    border: 0.5px solid black;
-    margin: 10px;
-}
-
 div.nav_bar {
     padding-top: 40px;
     text-align: center;
@@ -81,3 +65,24 @@ div.fb_login_link a {
     opacity: 30%;
     text-decoration: none;
 }
+
+.container {
+    display: flex;
+}
+
+.customer_info {
+    flex: 0.5;
+    padding: 20px;
+    border: 0.5px solid black;
+    margin-left: 200px;
+    margin-right: 5px;
+    margin-top: 50px;
+}  
+
+.customer_plant {
+    flex: 1;
+    padding: 20px;
+    border: 0.5px solid black;
+    margin-right: 200px;
+    margin-top: 50px;
+}  
