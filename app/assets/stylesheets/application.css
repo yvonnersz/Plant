@@ -9,7 +9,7 @@ h1 {
 
 h2 {
     text-align: center;
-    font-size: 50px;
+    font-size: 20px;
 }
 
 img {
@@ -69,23 +69,10 @@ div.fb_login_link a {
     text-decoration: none;
 }
 
-.container {
-    display: flex;
-}
-
-.customer_info {
-    flex: 0.5;
-    padding: 20px;
-    border: 0.5px solid black;
-    margin-left: 200px;
-    margin-right: 5px;
-    margin-top: 50px;
-}  
-
-.customer_plant {
+.customer_box {
     flex: 1;
-    padding: 20px;
+    padding: 10px;
     border: 0.5px solid black;
-    margin-right: 200px;
-    margin-top: 50px;
+    margin-left: 400px;
+    margin-right: 400px;
 }  

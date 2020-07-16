@@ -1,22 +1,10 @@
-<div class="container">
+<div class="customer_box">
 
-<div class="customer_info">
+<p>You have $<%= @customer.cash %>. Create a Store OR check store. </p>
 
-    <h2>Hi, <%= @customer.name %>.</h2>
-
-    <p>You have $<%= @customer.cash %>. Would you like to reload?</p>
-
-    <p>Create a Store</p>
-    You own x many plants.
-    <br><br>
-
-</div>
-
-<div class="customer_plant">
-    <h2>Owned Plants</h2>
-    <% @customer.indoor_plants.each do |plant| %>
-        <%= plant.name %><br>
-    <% end %>
-</div>
+<h2>You own <%= @customer.indoor_plants.count %> plants.</h2>
+<% @customer.indoor_plants.each do |plant| %>
+    <%= plant.name %><br>
+<% end %>
 
 </div>
