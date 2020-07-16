@@ -1,5 +1,13 @@
 class IndoorPlantsController < ApplicationController
 
+    def index
+        if params[:customer_id]
+            @indoor_plants = Customer.find(params[:customer_id]).indoor_plants
+        else
+            @indoor_plants = IndoorPlant.all
+        end
+    end
+
     def new
         @indoor_plant = IndoorPlant.new
     end

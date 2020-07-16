@@ -16,7 +16,10 @@ Rails.application.routes.draw do
   get '/indoor_plants/:id/buy' => 'indoor_plants#buy'
 
   
-  resources :customers
+  resources :customers do
+    resources :stores, only: [:index, :show]
+  end
+  
   resources :stores
   resources :indoor_plants
 
