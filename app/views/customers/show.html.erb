@@ -2,6 +2,7 @@
 
 <p>You have $<%= @customer.cash %>. Create a Store OR check store. </p>
 <%= link_to 'My Shops', customer_stores_path(@customer) %>
+<%= link_to 'Create a Shop', new_store_path %>
 
 <h2>You own <%= @customer.indoor_plants.count %> plants.</h2>
 <% @customer.indoor_plants.each do |plant| %>
