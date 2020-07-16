@@ -3,7 +3,8 @@ h1 {
     font-family: 'Indie Flower', cursive;    
     font-size: 75px;
     letter-spacing: 3px;
-    margin: auto;
+    padding: 1px;
+    margin-bottom: -40px;
 }
 
 h2 {
@@ -37,6 +38,8 @@ input {
 div.nav_bar {
     padding-top: 40px;
     text-align: center;
+    margin-bottom: 30px;
+    margin-top: 1px;
 }
 
 div.nav_bar a {
