@@ -18,6 +18,7 @@ class IndoorPlantsController < ApplicationController
         indoor_plant = IndoorPlant.find_by(:id => params[:id])
         
         customer.update(:cash => customer.cash - indoor_plant.price)
+        customer.indoor_plants << indoor_plant
 
         redirect_to customer_path(customer)
     end
