@@ -3,7 +3,7 @@ h1 {
     font-family: 'Indie Flower', cursive;    
     font-size: 75px;
     letter-spacing: 3px;
-    margin: 10px;
+    margin: auto;
 }
 
 h2 {
@@ -54,22 +54,19 @@ div.customer_plants {
     margin: 10px;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+div.nav_bar {
+    padding: 30px;
+    text-align: center;
 }
 
-li {
-float: left;
+div.nav_bar a {
+    padding: 10px;
+    color: black;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
 }
 
-li a {
-display: block;
-color: white;
-text-align: center;
-padding: 14px 16px;
-text-decoration: none;
+a:hover {
+    background-color: #92C591;
+    transition:all 1s ease;
 }

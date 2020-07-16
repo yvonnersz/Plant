@@ -7,18 +7,20 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">  </head>
 
   <body>
 
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/">Browse Shops</a></li>
-    <li><a href="/">About</a></li>
+  <div class="nav_bar">
 
-    <li style="float:right"><a href="/">Log Out</a></li>
-    <li style="float:right"><a href="/">Showpage</a></li>
-  </ul>
+      <a href="/">Home</a>
+      <a href="/">Browse Shops</a>
+      <a href="/">About</a>
+      <a href="/">Showpage</a>
+      <a href="/">Log Out</a>
+
+  </div>
 
     <%= yield %>
 
