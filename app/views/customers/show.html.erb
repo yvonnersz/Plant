@@ -13,5 +13,7 @@
 
 <div class="customer_plants">
     <h2>Owned Plants</h2>
-    <%= binding.pry %>
+    <% @customer.indoor_plants.each do |plant| %>
+        <%= plant.name %>
+    <% end %>
 </div>
