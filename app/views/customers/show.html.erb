@@ -1,8 +1,12 @@
-<h1><%= @customer.name %></h1>
+<div class="customer_info">
 
-You have $<%= @customer.cash %>. Would you like to reload?
-<br><br>
+    <h2><%= @customer.name %></h2>
 
-What would you like to do?<br>
-<%= link_to 'Browse Shops', stores_path %><br>
-<%= link_to 'Log Out', '/logout' %><br>
+    You have $<%= @customer.cash %>. Would you like to reload?
+    <br><br>
+
+    What would you like to do?<br>
+    <%= link_to 'Browse Shops', stores_path %><br>
+    <%= link_to 'Log Out', '/logout' %><br>
+
+</div>
