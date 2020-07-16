@@ -55,7 +55,7 @@ div.customer_plants {
 }
 
 div.nav_bar {
-    padding: 30px;
+    padding-top: 40px;
     text-align: center;
 }
 
@@ -63,7 +63,8 @@ div.nav_bar a {
     padding: 10px;
     color: black;
     font-family: 'Bebas Neue', cursive;
-    font-size: 25px;
+    font-size: 20px;
+    opacity: 30%;
 }
 
 a:hover {
