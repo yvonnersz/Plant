@@ -1,19 +1,23 @@
-<div class="customer_info">
+<div class="container">
 
-    <h2><%= @customer.name %></h2>
+    <div class="customer_info">
 
-    You have $<%= @customer.cash %>. Would you like to reload?
-    <br><br>
+        <h2><%= @customer.name %></h2>
 
-    What would you like to do?<br>
-    <%= link_to 'Browse Shops', stores_path %><br>
-    <%= link_to 'Log Out', '/logout' %><br>
+        You have $<%= @customer.cash %>. Would you like to reload?
+        <br><br>
 
-</div>
+        What would you like to do?<br>
+        <%= link_to 'Browse Shops', stores_path %><br>
+        <%= link_to 'Log Out', '/logout' %><br>
 
-<div class="customer_plants">
-    <h2>Owned Plants</h2>
-    <% @customer.indoor_plants.each do |plant| %>
-        <%= plant.name %>
-    <% end %>
+    </div>
+
+    <div class="customer_plants">
+        <h2>Owned Plants</h2>
+        <% @customer.indoor_plants.each do |plant| %>
+            <%= plant.name %>
+        <% end %>
+    </div>
+
 </div>

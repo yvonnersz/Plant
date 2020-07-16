@@ -1,18 +1,18 @@
-<h2>Sign Up</h2>
+<img src="https://www.pinclipart.com/picdir/big/212-2122243_potted-plant-potted-plant-pixel-art-clipart.png" width="100" height="100"><br>
 
 <div class="form">
 <%= form_for(@customer, url:'/signup') do |f| %>
 
-    <%= f.email_field :email, placeholder: "Email", required: true %>
+    <%= f.email_field :email, placeholder: "Please enter an email.", required: true %>
     <br><br>
 
-    <%= f.password_field :password, placeholder: "Password", required: true %>
+    <%= f.password_field :password, placeholder: "Please enter in a password.", required: true %>
     <br><br>
 
-    <%= f.text_field :name, placeholder: "First Name", required: true %>
+    <%= f.text_field :name, placeholder: "What would you like to be called?", required: true %>
     <br><br>
 
-    <%= f.number_field :cash, placeholder: "Cash", required: true %>
+    <%= f.number_field :cash, placeholder: "How much cash do you have?", required: true %>
     <br><br>
     
     <%= f.submit "Submit" %>
