@@ -19,7 +19,7 @@
       <a href="/stores" style="text-decoration:none">Browse Shops</a>
 
       <%if logged_in? %>
-        <a href="/" style="text-decoration:none">Showpage</a>
+        <a href="/customers/<%= current_customer.id %>" style="text-decoration:none"><%= current_customer.name %></a>
         <a href="/logout" style="text-decoration:none">Log Out</a>
       <% else %>
         <a href="/signup" style="text-decoration:none">Sign Up</a>
