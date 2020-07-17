@@ -1,12 +1,15 @@
 <div class="content">
 
-<h1><%= @store.name %></h1>
+<h2><%= @store.name %></h2>
+<p>HAVE A SMALL STORE BIO<p>
 
-<h3>Plants Available</h3>
+<h2>Plants in Stock</h2>
 
 <% @store.indoor_plants.each do |plant| %>
-    <%= link_to plant.name, indoor_plant_path(plant) %><br>
+    <p><%= link_to plant.name, indoor_plant_path(plant) %></p><br>
 <% end %>
 
-<%= link_to 'Add Plants to Shop', new_store_indoor_plant_path(@store) %> 
+<% if session[:customer_id] == @store.customer_id %>
+    <%= link_to 'Add Plants to Shop', new_store_indoor_plant_path(@store) %> 
+<% end %>
 </div>

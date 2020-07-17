@@ -1,8 +1,10 @@
 <div class="content">
 
-<p>You have $<%= @customer.cash %>. Create a Store OR check store. </p>
-<%= link_to 'My Shops', customer_stores_path(@customer) %>
+Welcome back.
+
 <%= link_to 'Create a Shop', new_customer_store_path(@customer) %>
+<%= link_to 'My Shops', customer_stores_path(@customer) %>
+Your balance is $<%= @customer.cash %>.
 
 <h2>You own <%= @customer.indoor_plants.count %> plants.</h2>
 <% @customer.indoor_plants.each do |plant| %>
