@@ -16,7 +16,7 @@ class StoresController < ApplicationController
         @store = Store.create(store_params)
         @store.customer_id = session[:customer_id]
         @store.save
-        redirect_to @store
+        redirect_to '/stores/:id/indoor_plants/new'
     end
 
     def show

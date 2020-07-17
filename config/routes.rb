@@ -17,10 +17,13 @@ Rails.application.routes.draw do
 
   
   resources :customers do
-    resources :stores, only: [:index, :show]
+    resources :stores, only: [:index, :show, :new]
   end
   
-  resources :stores
+  resources :stores do
+    resources :indoor_plants, only: [:index, :show, :new]
+  end
+
   resources :indoor_plants
 
 end
