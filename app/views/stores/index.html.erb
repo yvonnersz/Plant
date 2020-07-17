@@ -1,4 +1,4 @@
-<div class="customer_box">
+<div class="index">
 <% @stores.each.with_index(1) do |store, index| %>
     <p><%= index %>. <%= link_to store.name, store_path(store) %></p>
 <% end %>

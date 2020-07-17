@@ -80,3 +80,12 @@ div.fb_login_link a {
 .content p {
     text-align: center;
 }  
+
+.index {
+    flex: 1;
+    padding: 10px;
+    border: 0.5px solid black;
+    margin-left: 400px;
+    margin-right: 400px;
+}  
+
