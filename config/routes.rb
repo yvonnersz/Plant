@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   
   resources :customers do
-    resources :stores, only: [:index, :show, :new]
+    resources :stores, only: [:index, :show, :new, :create]
   end
   
   resources :stores do

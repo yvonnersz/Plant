@@ -1,5 +1,5 @@
 <div class="index">
 <% @stores.each.with_index(1) do |store, index| %>
-    <p><%= index %>. <%= link_to store.name, store_path(store) %> by <%= store.customer.name %>. Has <%= store.indoor_plants.count %> plants.</p>
+    <%= index %>. <%= store.name%><br>
 <% end %>
 </div>
