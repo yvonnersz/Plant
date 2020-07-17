@@ -1,5 +1,5 @@
 <div class="index">
 <% @stores.each.with_index(1) do |store, index| %>
-    <%= index %>. <%= store.name%><br>
+    <%= index %>. <%= link_to store.name, customer_store_path(store.customer, store) %><br>
 <% end %>
 </div>
