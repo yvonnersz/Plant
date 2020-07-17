@@ -1,7 +1,11 @@
 class StoresController < ApplicationController
 
     def index
-        @stores = Store.all
+        if params[:customer_id]
+            @stores = Customer.find_by(:id => params[:customer_id]).stores
+        else
+            @stores = Store.all
+        end
     end
 
     def new
@@ -10,6 +14,8 @@ class StoresController < ApplicationController
 
     def create
         @store = Store.create(store_params)
+        @store.customer_id = session[:customer_id]
+        @store.save
         redirect_to @store
     end
 
@@ -20,7 +26,7 @@ class StoresController < ApplicationController
     private
 
     def store_params
-        params.require(:store).permit(:name, :prestige)
+        params.require(:store).permit(:name, :prestige, :customer_id)
     end
 
 end
