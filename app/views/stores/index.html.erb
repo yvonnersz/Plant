@@ -1,5 +1,5 @@
-<h1>List of Stores</h1>
-
-<% @stores.each do |store| %>
-    <%= link_to store.name, store_path(store) %><br>
+<div class="customer_box">
+<% @stores.each.with_index(1) do |store, index| %>
+    <p><%= index %>. <%= link_to store.name, store_path(store) %></p>
 <% end %>
+</div>
