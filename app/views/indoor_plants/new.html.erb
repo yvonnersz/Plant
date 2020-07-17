@@ -1,18 +1,18 @@
-<h1>Create Indoor Plants</h1>
+<div class = "content">
+    <div class = "form">
+    <%= form_for(@indoor_plant) do |f| %>
 
-<%= form_for(@indoor_plant) do |f| %>
+        <%= f.text_field :name, placeholder: "What is the name of the plant you want to sell?" %>
+        <br><br>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br><br>
+        <%= f.text_field :price, placeholder: "How much would you like to sell the plant for?" %>
+        <br><br>
 
-    <%= f.label :price %>
-    <%= f.text_field :price %>
-    <br><br>
+        <%= f.label :store_id, "Select a Store" %>
+        <%= f.collection_select :store_id, Store.all, :id, :name, prompt: true %>
+        
+        <%= f.submit "Submit" %>
 
-    <%= f.label :store_id, "Select a Store" %>
-    <%= f.collection_select :store_id, Store.all, :id, :name, prompt: true %>
-    
-    <%= f.submit "Submit" %>
-
-<% end %>
+    <% end %>
+    </div>
+</div>
