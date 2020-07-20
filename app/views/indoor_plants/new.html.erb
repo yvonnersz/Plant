@@ -7,9 +7,6 @@
 
         <%= f.text_field :price, placeholder: "How much would you like to sell the plant for?" %>
         <br><br>
-
-        <%= f.label :store_id, "Select a Store" %>
-        <%= f.collection_select :store_id, Store.all, :id, :name, prompt: true %>
         
         <%= f.submit "Submit" %>
 
