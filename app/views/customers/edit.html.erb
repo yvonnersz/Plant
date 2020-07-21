@@ -1,6 +1,9 @@
 
 <div class="form">
 <%= form_for(@customer) do |f| %>
+    
+    <%= f.text_field :name, placeholder: "What would you like to be called?" %>
+    <br><br>
 
     <%= f.number_field :cash, placeholder: "How much cash do you have?" %>
     <br><br>

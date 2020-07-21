@@ -28,7 +28,7 @@ class CustomersController < ApplicationController
 
     def update
         @customer = Customer.find_by(:id => params[:id])
-        @customer.update(:cash => params[:cash])
+        @customer.update(customer_params)
         redirect_to @customer
     end
 
