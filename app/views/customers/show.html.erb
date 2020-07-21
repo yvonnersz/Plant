@@ -1,13 +1,13 @@
 <div class="content">
 
-Welcome back.
-
-<%= link_to 'My Shops', customer_stores_path(@customer) %>
-Your balance is $<%= @customer.cash %>.
-
 <h2>You own <%= @customer.indoor_plants.count %> plants.</h2>
 <% @customer.indoor_plants.each do |plant| %>
     <%= plant.name %><br>
 <% end %>
 
+</div>
+
+<div class="special">
+<%= link_to 'My Shops', customer_stores_path(@customer) %>
+<%= link_to "Your balance is #{@customer.cash}", '/' %>
 </div>
