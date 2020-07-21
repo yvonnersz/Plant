@@ -32,9 +32,13 @@ class IndoorPlantsController < ApplicationController
     end
 
     def edit
+        @indoor_plant = IndoorPlant.find_by(:id => params[:id])
     end
 
     def update
+        @indoor_plant = IndoorPlant.find_by(:id => params[:id])
+        @indoor_plant.update(indoor_plants_params)
+        redirect_to @indoor_plant
     end
 
     private
