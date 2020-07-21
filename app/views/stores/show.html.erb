@@ -1,12 +1,15 @@
 <div class="content">
 
 <h2><%= @store.name %></h2>
-<p>HAVE A SMALL STORE BIO<p>
+
+<div class="bio">
+<p><%= @store.bio %><p>
+</div>
 
 <h2>Plants in Stock</h2>
 
 <% @store.indoor_plants.each do |plant| %>
-    <p><%= link_to plant.name, indoor_plant_path(plant) %></p><br>
+    <p><%= link_to plant.name, indoor_plant_path(plant) %></p>
 <% end %>
 
 

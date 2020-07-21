@@ -20,6 +20,10 @@ img {
   height: 210;
 }
 
+div.bio {
+    font-style: italic;
+}
+
 div.form {
     text-align: center;
 }
