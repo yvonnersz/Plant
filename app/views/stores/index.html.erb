@@ -36,8 +36,18 @@
 
 <% else %>
 
+<table>
+
+<tr>
+    <th>Store</th>
+    <th>Owner</th>
+</tr>
+
 <% @stores.each do |store| %>
-  <%= link_to store.name, store_path(store) %>
+  <tr>
+  <td><%= link_to store.name, store_path(store) %></td>
+  <td><%= store.customer.name %></td>
+  <tr>
   <% end %>
 
   <% end %>
