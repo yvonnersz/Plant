@@ -20,8 +20,15 @@ img {
   height: 210;
 }
 
+div.about {
+    text-align: justify;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
 div.bio {
     font-style: italic;
+    text-align: justify;
 }
 
 div.form {
