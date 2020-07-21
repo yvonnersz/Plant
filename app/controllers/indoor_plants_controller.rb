@@ -24,11 +24,13 @@ class IndoorPlantsController < ApplicationController
     def buy
         customer = Customer.find_by(:id => session[:customer_id])
         indoor_plant = IndoorPlant.find_by(:id => params[:id])
+        store = IndoorPlant.find_by(:id => params[:id]).store
 
         if indoor_plant.price <= customer.cash
             
             customer.update(:cash => customer.cash - indoor_plant.price)
             customer.indoor_plants << indoor_plant
+            store.update(:income => + indoor_plant.price)
 
             redirect_to customer_path(customer)
         else
