@@ -81,6 +81,12 @@ div.fb_login_link a {
     text-align: center;
 }  
 
+.content table {
+    width: 100%;
+    text-align: center;
+    margin-left: -15px;
+}  
+
 .index {
     flex: 1;
     padding: 10px;
