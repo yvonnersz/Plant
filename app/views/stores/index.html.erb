@@ -1,5 +1,7 @@
 <div class="content">
 
+<% if params[:customer_id] %>
+
 <% if @stores.empty? %>
 
 <p>You do not own any shops.</p>
@@ -31,3 +33,11 @@
 <div class="special">
 <%= link_to 'Create New Store', new_customer_store_path %>
 </div>
+
+<% else %>
+
+<% @stores.each do |store| %>
+  <%= link_to store.name, store_path(store) %>
+  <% end %>
+
+  <% end %>
