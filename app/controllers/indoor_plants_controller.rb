@@ -31,6 +31,12 @@ class IndoorPlantsController < ApplicationController
         redirect_to customer_path(customer)
     end
 
+    def edit
+    end
+
+    def update
+    end
+
     private
 
     def indoor_plants_params
