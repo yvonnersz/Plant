@@ -8,13 +8,13 @@
     <th>Owner</th>
   </tr>
 
-  <tr>
     <% @stores.each.with_index(1) do |store, index| %>
+        <tr>
         <td><%= link_to store.name, customer_store_path(store.customer, store) %></td>
         <td><%= store.indoor_plants.count %></td>
         <td><%= store.customer.name %>
+        </tr>
     <% end %>
-  </tr>
 
 </table>
 
