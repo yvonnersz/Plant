@@ -9,7 +9,7 @@ class IndoorPlantsController < ApplicationController
     end
 
     def new
-        @indoor_plant = IndoorPlant.new
+        @indoor_plant = IndoorPlant.new(:store_id => params[:store_id])
     end
 
     def create

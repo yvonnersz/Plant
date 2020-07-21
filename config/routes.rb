@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
   
   resources :stores do
-    resources :indoor_plants, only: [:index, :show, :new]
+    resources :indoor_plants
   end
 
   resources :indoor_plants

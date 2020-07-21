@@ -2,6 +2,8 @@
     <div class = "form">
     <%= form_for(@indoor_plant) do |f| %>
 
+        <%= f.hidden_field :store_id %>
+
         <%= f.text_field :name, placeholder: "What is the name of the plant you want to sell?" %>
         <br><br>
 
