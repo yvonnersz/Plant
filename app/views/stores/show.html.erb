@@ -19,6 +19,7 @@
         <%= plant.name %><br>
     <% end %>
     $<%= plant.price %><br>
+    <%= link_to 'Buy this Plant', "/indoor_plants/#{plant.id}/buy" %><br>
     </div>
 
 <% end %>
