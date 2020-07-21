@@ -1,7 +1,22 @@
-<div class="index">
-<% @stores.each.with_index(1) do |store, index| %>
-    <%= index %>. <%= link_to store.name, customer_store_path(store.customer, store) %><br>
-<% end %>
+<div class="content">
+
+<table style="width:100%">
+
+  <tr>
+    <th>Store</th>
+    <th>No. Plants</th>
+    <th>Owner</th>
+  </tr>
+
+  <tr>
+    <% @stores.each.with_index(1) do |store, index| %>
+        <td><%= link_to store.name, customer_store_path(store.customer, store) %></td>
+        <td><%= store.indoor_plants.count %></td>
+        <td><%= store.customer.name %>
+    <% end %>
+  </tr>
+
+</table>
 
 </div>
 
