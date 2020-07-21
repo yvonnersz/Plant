@@ -9,7 +9,9 @@
 <h2>Plants in Stock</h2>
 
 <% @store.indoor_plants.each do |plant| %>
+    <img src="<%= plant.image %>">
     <p><%= link_to plant.name, indoor_plant_path(plant) %></p>
+    <p>$<%= plant.price %></p>
 <% end %>
 
 
