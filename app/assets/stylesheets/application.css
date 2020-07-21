@@ -67,8 +67,10 @@ a:hover {
 }
 
 div.special {
-    padding-top: 20px;
+    padding-top: 30px;
     text-align: center;
+    margin-bottom: 30px;
+    margin-top: 1px;
 }
 
 div.special a {
@@ -78,6 +80,7 @@ div.special a {
     font-size: 20px;
     opacity: 30%;
     text-decoration: none;
+    text-align: center;
 }
 
 .content {
