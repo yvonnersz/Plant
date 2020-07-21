@@ -13,13 +13,13 @@
     <div class="store_plants">
 
     <img src="<%= plant.image %>"><br>
+    $<%= plant.price %><br>
     <% if session[:customer_id] == @store.customer_id %>
         <%= link_to plant.name, edit_indoor_plant_path(plant) %><br>
     <% else %>
         <%= plant.name %><br>
+        <%= link_to 'Buy this Plant', "/indoor_plants/#{plant.id}/buy" %><br>
     <% end %>
-    $<%= plant.price %><br>
-    <%= link_to 'Buy this Plant', "/indoor_plants/#{plant.id}/buy" %><br>
     </div>
 
 <% end %>
