@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_17_022600) do
+ActiveRecord::Schema.define(version: 2020_07_21_051808) do
 
   create_table "customer_indoor_plants", force: :cascade do |t|
     t.integer "customer_id", null: false
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_022600) do
     t.integer "store_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
     t.index ["store_id"], name: "index_indoor_plants_on_store_id"
   end
 
@@ -47,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_07_17_022600) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "customer_id", null: false
+    t.string "bio"
     t.index ["customer_id"], name: "index_stores_on_customer_id"
   end
 
