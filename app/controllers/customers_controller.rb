@@ -22,6 +22,16 @@ class CustomersController < ApplicationController
         @customer = Customer.find_by(:id => params[:id])
     end
 
+    def edit
+        @customer = Customer.find_by(:id => params[:id])
+    end
+
+    def update
+        @customer = Customer.find_by(:id => params[:id])
+        @customer.update(:cash => params[:cash])
+        redirect_to @customer
+    end
+
     private
 
     def customer_params
