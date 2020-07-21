@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
             u.password = auth['uid'] #secure random hex
         end
         session[:customer_id] = @customer.id
-        redirect_to @customer
+        redirect_to edit_customer_path(@customer)
     end
 
     def destroy
