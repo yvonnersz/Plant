@@ -26,6 +26,7 @@
 
 <div class="special">
 <% if session[:customer_id] == @store.customer_id %>
-    <%= link_to 'Add Plants to Shop', new_store_indoor_plant_path(@store) %> 
+    <%= link_to "Edit #{@store.name}", edit_store_path(@store) %> 
+    <%= link_to 'Add Plants to Store', new_store_indoor_plant_path(@store) %> 
 <% end %>
 </div>

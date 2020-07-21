@@ -23,6 +23,16 @@ class StoresController < ApplicationController
         @store = Store.find_by(:id => params[:id])
     end
 
+    def edit
+        @store = Store.find_by(:id => params[:id])
+    end
+
+    def update
+        @store = Store.find_by(:id => params[:id])
+        @store.update(store_params)
+        redirect_to @store
+    end
+
     private
 
     def store_params
