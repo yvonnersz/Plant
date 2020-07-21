@@ -1,5 +1,11 @@
 <div class="content">
 
+<% if @stores.empty? %>
+
+<p>You do not own any shops.</p>
+
+<% else %>
+
 <table>
 
   <tr>
@@ -17,6 +23,8 @@
     <% end %>
 
 </table>
+
+<% end %>
 
 </div>
 
