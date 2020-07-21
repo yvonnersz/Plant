@@ -55,12 +55,12 @@ a:hover {
     transition:all 1s ease;
 }
 
-div.fb_login_link {
+div.special {
     padding-top: 20px;
     text-align: center;
 }
 
-div.fb_login_link a {
+div.special a {
     padding: 10px;
     color: black;
     font-family: 'Bebas Neue', cursive;
@@ -81,10 +81,18 @@ div.fb_login_link a {
     text-align: center;
 }  
 
+.content th {
+    text-decoration: underline;
+}  
+
+.content a {
+    text-decoration: none;
+} 
+
 .content table {
     width: 100%;
     text-align: center;
-    margin-left: -15px;
+    margin-left: -20px;
 }  
 
 .index {
