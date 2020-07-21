@@ -107,3 +107,17 @@ div.special a {
     margin-right: 400px;
 }  
 
+.store_plants img {
+    width: 150px;
+    height: 150px;
+  }
+
+.store_plants {
+    margin-left: 45px;
+    display: inline-grid;
+    grid-template-columns: auto;
+    grid-gap: 1px;
+    text-align: center;
+  }
+
+  
