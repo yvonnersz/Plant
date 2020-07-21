@@ -9,6 +9,11 @@
     <p><%= link_to plant.name, indoor_plant_path(plant) %></p><br>
 <% end %>
 
+
+</div>
+
+
+<div class="special">
 <% if session[:customer_id] == @store.customer_id %>
     <%= link_to 'Add Plants to Shop', new_store_indoor_plant_path(@store) %> 
 <% end %>
