@@ -20,17 +20,18 @@
 
     <% @stores.each.with_index(1) do |store, index| %>
         <tr>
-          <td><%= link_to store.name, customer_store_path(store.customer, store) %></td>
-          <td><%= store.indoor_plants.count %></td>
+        <td><%= link_to store.name, customer_store_path(store.customer, store) %></td>
+        <td><%= store.indoor_plants.count %></td>
 
-          <td>
-            <% if store.income.nil? %>
-              <%= 0 %>
-            <% else %>
-              <%= store.income %>
-            <% end %>
-          </td>
+        <td>
+          <% if store.income.nil? %>
+            <%= 0 %>
+          <% else %>
+            <%= store.income %>
+          <% end %>
+        </td>
 
+        <td><%= store.plants_sold %></td>
         </tr>
     <% end %>
 
@@ -51,12 +52,15 @@
 <tr>
     <th>Store</th>
     <th>Owner</th>
+    <th>Plants Sold</th>
 </tr>
 
 <% @stores.each do |store| %>
   <tr>
   <td><%= link_to store.name, store_path(store) %></td>
   <td><%= store.customer.name %></td>
+  <td><%= store.plants_sold %></td>
+
   <tr>
   <% end %>
 
