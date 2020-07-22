@@ -1,12 +1,10 @@
-<% if @customer.errors.any? %>
-    <div class="error">
-    <ul>
-    <% @customer.errors.full_messages.each do |message| %>
-        <li><%= message %>.</li>
+<div class="error">
+    <% if @customer.errors.any? %>
+        <% @customer.errors.full_messages.each do |message| %>
+            <%= message %>.<br>
+        <% end %><br>
     <% end %>
-    </ul>
-    </div>
-<% end %>
+</div>
 
 
 <div class="form">
