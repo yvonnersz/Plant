@@ -18,8 +18,8 @@ class Store < ApplicationRecord
         h = @x.group_by(&:itself)
         k, v = h.first
         y = h.map {|k, v| [k.name, v.length]}.to_h
-        y.sort_by {|k, v| -v}
-        y.keys[0]
+        z = y.sort_by {|k, v| -v}.to_h
+        z.keys[0]
     end
 
 end
