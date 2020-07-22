@@ -5,13 +5,21 @@ class Store < ApplicationRecord
     belongs_to :customer
 
     def plants_sold
-        x = []
+        @x = []
 
         Customer.all.each do |customer|
-            customer.indoor_plants.collect {|plant| x << plant.store_id if plant.store_id == self.id}
+            customer.indoor_plants.collect {|plant| @x << plant if plant.store_id == self.id}
         end
 
-        x.count
+        @x.count
+    end
+
+    def most_sold_plant
+        h = @x.group_by(&:itself)
+        k, v = h.first
+        y = h.map {|k, v| [k.name, v.length]}.to_h
+        y.sort_by {|k, v| -v}
+        y.keys[0]
     end
 
 end
