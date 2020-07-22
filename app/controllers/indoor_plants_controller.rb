@@ -14,7 +14,7 @@ class IndoorPlantsController < ApplicationController
 
     def create
         @indoor_plant = IndoorPlant.create(indoor_plants_params)
-        redirect_to @indoor_plant
+        redirect_to store_path(@indoor_plant.store)
     end
 
     def show
