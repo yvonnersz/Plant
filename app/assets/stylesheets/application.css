@@ -86,7 +86,6 @@ div.special a {
 .content {
     flex: 1;
     padding: 10px;
-    border: 0.5px solid black;
     margin-left: 400px;
     margin-right: 400px;
 }  
@@ -106,7 +105,6 @@ div.special a {
 .content table {
     width: 100%;
     text-align: center;
-    margin-left: -20px;
 }  
 
 .index {
