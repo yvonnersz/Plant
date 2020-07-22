@@ -7,11 +7,15 @@ class SessionsController < ApplicationController
 
     def create
         if @customer = Customer.find_by(:email => params[:customer][:email])
-            @customer.authenticate(:password => params[:customer][:password])
-            session[:customer_id] = @customer.id
-            redirect_to @customer
+            if @customer.authenticate(params[:customer][:password])
+                session[:customer_id] = @customer.id
+                redirect_to customer_path(@customer)
+            else
+                flash[:message] = "Incorrect password. Please try again."
+                redirect_to '/login'
+            end
         else
-            flash[:message] = "Invalid username and password. Please try again."
+            flash[:message] = "This email does not exist."
             redirect_to '/login'
         end
     end
