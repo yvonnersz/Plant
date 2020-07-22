@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get '/indoor_plants/:id/buy' => 'indoor_plants#buy'
   get '/indoor_plants/:id/buy' => 'indoor_plants#buy'
 
-  resources :customers do
+  resources :customers, except: [:index] do
     resources :stores, only: [:index, :show, :new, :create]
   end
   
