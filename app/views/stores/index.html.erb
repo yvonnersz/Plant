@@ -20,15 +20,17 @@
 
     <% @stores.each.with_index(1) do |store, index| %>
         <tr>
-        <td><%= link_to store.name, customer_store_path(store.customer, store) %></td>
-        <td><%= store.indoor_plants.count %></td>
-        <td>
-          <% if store.income.nil? %>
-            <%= 0 %>
-          <% else %>
-            <%= store.income %>
-          <% end %>
-        </td>
+          <td><%= link_to store.name, customer_store_path(store.customer, store) %></td>
+          <td><%= store.indoor_plants.count %></td>
+
+          <td>
+            <% if store.income.nil? %>
+              <%= 0 %>
+            <% else %>
+              <%= store.income %>
+            <% end %>
+          </td>
+
         </tr>
     <% end %>
 

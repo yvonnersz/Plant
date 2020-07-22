@@ -32,6 +32,9 @@ class IndoorPlantsController < ApplicationController
             
             customer.update(:cash => customer.cash - indoor_plant.price)
             customer.indoor_plants << indoor_plant
+
+            store.income = (store.income.nil? ? 0:store.income)
+
             store.update(:income => store.income + indoor_plant.price)
 
             flash[:message] = "You have successfully bought the plant."
