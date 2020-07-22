@@ -3,8 +3,8 @@ class StoresController < ApplicationController
     before_action :require_login
 
     def index
-        if params[:customer_id]
-            @stores = Customer.find_by(:id => params[:customer_id]).stores
+        if params[:store_id]
+            @stores = store.find_by(:id => params[:store_id]).stores
         else
             @stores = Store.all
         end
@@ -15,10 +15,16 @@ class StoresController < ApplicationController
     end
 
     def create
-        @store = Store.create(store_params)
+        @store = Store.new(store_params)
         @store.customer_id = session[:customer_id]
-        @store.save
-        redirect_to @store
+
+        if @store.valid?
+            @store.save
+            redirect_to store_path(@store)
+        elsif 
+            render :'/stores/new'
+        end
+        
     end
 
     def show
@@ -54,7 +60,7 @@ class StoresController < ApplicationController
     private
 
     def store_params
-        params.require(:store).permit(:name, :prestige, :customer_id, :bio)
+        params.require(:store).permit(:name, :prestige, :store_id, :bio)
     end
 
 end
