@@ -33,6 +33,22 @@ class StoresController < ApplicationController
         redirect_to @store
     end
 
+    def destroy
+        @store = Store.find_by(:id => params[:id])
+        
+        if @store.indoor_plants.empty? == true
+            @store.destroy
+            redirect_to stores_path
+        else
+            @store.indoor_plants.each do |plant|
+                plant.destroy
+            end
+            
+            @store.destroy
+            redirect_to stores_path
+        end
+    end
+
     private
 
     def store_params
