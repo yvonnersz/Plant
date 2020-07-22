@@ -32,7 +32,8 @@ class IndoorPlantsController < ApplicationController
             customer.indoor_plants << indoor_plant
             store.update(:income => + indoor_plant.price)
 
-            redirect_to customer_path(customer)
+            flash[:message] = "You have successfully bought the plant."
+            redirect_to store_path(store)
         else
             flash[:message] = "You do not have enough cash."
             redirect_to store_path(indoor_plant)
