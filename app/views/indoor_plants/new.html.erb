@@ -4,10 +4,10 @@
 
         <%= f.hidden_field :store_id %>
 
-        <%= f.text_field :name, placeholder: "What is the name of the plant you want to sell?" %>
+        <%= f.text_field :name, placeholder: "What is the name of the plant you want to sell?", required: true %>
         <br><br>
 
-        <%= f.text_field :price, placeholder: "How much would you like to sell the plant for?" %>
+        <%= f.text_field :price, placeholder: "How much would you like to sell the plant for?", required: true %>
         <br><br>
 
         <%= f.text_field :image, placeholder: "Please include the image source for the plant." %>
