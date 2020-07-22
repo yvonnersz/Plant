@@ -1,8 +1,8 @@
 <div class="content">
 
-<h2>You own <%= @customer.indoor_plants.count %> plants.</h2>
+<h2>You own <%= pluralize(@customer.indoor_plants.count, 'plant') %>.</h2>
 <% @customer.indoor_plants.each do |plant| %>
-    <%= plant.name %><br>
+    <p><%= plant.name %></p>
 <% end %>
 
 </div>
