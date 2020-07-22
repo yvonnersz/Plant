@@ -50,7 +50,7 @@ class IndoorPlantsController < ApplicationController
     def update
         @indoor_plant = IndoorPlant.find_by(:id => params[:id])
         @indoor_plant.update(indoor_plants_params)
-        redirect_to @indoor_plant
+        redirect_to store_path(@indoor_plant.store)
     end
 
     def destroy
