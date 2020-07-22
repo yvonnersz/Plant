@@ -1,4 +1,6 @@
 class StoresController < ApplicationController
+    include ApplicationHelper
+    before_action :require_login
 
     def index
         if params[:customer_id]
