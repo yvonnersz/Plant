@@ -8,13 +8,13 @@ class CustomersController < ApplicationController
     end
 
     def create
-        if @customer = Customer.find_by(:email => params[:customer][:email])
-            flash[:message] = "An account has been made with this email. Please login."
-            redirect_to '/login'
-        elsif @customer = Customer.new(customer_params)
-            @customer.save
+        @customer = Customer.find_by(:email => params[:customer][:email])
+        if @customer.valid?
+            @customer = Customer.create(customer_params)
             session[:customer_id] = @customer.id
-            redirect_to @customer
+            render :'/customers/new'
+        elsif 
+            render :'/customers/new'
         end
     end
 

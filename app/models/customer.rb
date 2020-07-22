@@ -1,5 +1,4 @@
 class Customer < ApplicationRecord
-    validates :name, :email, presence: true
     validates :name, :email, uniqueness: true
     validates :cash, numericality: { greater_than: 0 }
 

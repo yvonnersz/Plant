@@ -1,17 +1,27 @@
+<% if @customer.errors.any? %>
+    <div class="error">
+    <ul>
+    <% @customer.errors.full_messages.each do |message| %>
+        <li><%= message %>.</li>
+    <% end %>
+    </ul>
+    </div>
+<% end %>
+
 
 <div class="form">
 <%= form_for(@customer, url:'/signup') do |f| %>
 
-    <%= f.email_field :email, placeholder: "Please enter an email.", required: true %>
+    <%= f.email_field :email, placeholder: "Please enter an email." %>
     <br><br>
 
-    <%= f.password_field :password, placeholder: "Please enter in a password.", required: true %>
+    <%= f.password_field :password, placeholder: "Please enter in a password." %>
     <br><br>
 
-    <%= f.text_field :name, placeholder: "What would you like to be called?", required: true %>
+    <%= f.text_field :name, placeholder: "What would you like to be called?" %>
     <br><br>
 
-    <%= f.number_field :cash, placeholder: "How much cash do you have?", required: true %>
+    <%= f.number_field :cash, placeholder: "How much cash do you have?" %>
     <br><br>
     
     <%= f.submit "Submit" %>
