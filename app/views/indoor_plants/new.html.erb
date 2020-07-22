@@ -1,3 +1,11 @@
+<div class="error">
+    <% if @indoor_plant.errors.any? %>
+        <% @indoor_plant.errors.full_messages.each do |message| %>
+            <%= message %>.<br>
+        <% end %><br>
+    <% end %>
+</div>
+
 <div class = "content">
     <div class = "form">
     <%= form_for(@indoor_plant) do |f| %>
