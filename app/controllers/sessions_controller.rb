@@ -21,10 +21,10 @@ class SessionsController < ApplicationController
             u.name = auth['info']['name']
             u.email = auth['info']['email']
             u.password = auth['uid'] #secure random hex
-            u.cash = 0
+            u.cash.empty? ? u.cash == 0 : u.cash = @customer.cash
         end
         session[:customer_id] = @customer.id
-        redirect_to edit_customer_path(@customer)
+        redirect_to customer_path(@customer)
     end
 
     def destroy
