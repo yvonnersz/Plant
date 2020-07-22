@@ -3,8 +3,8 @@ class StoresController < ApplicationController
     before_action :require_login
 
     def index
-        if params[:store_id]
-            @stores = store.find_by(:id => params[:store_id]).stores
+        if params[:customer_id]
+            @stores = Customer.find_by(:id => params[:customer_id]).stores
         else
             @stores = Store.all
         end
