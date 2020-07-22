@@ -50,6 +50,15 @@ class IndoorPlantsController < ApplicationController
         redirect_to @indoor_plant
     end
 
+    def destroy
+        store = IndoorPlant.find_by(:id => params[:id]).store
+
+        @indoor_plant = IndoorPlant.find_by(:id => params[:id])
+        @indoor_plant.destroy
+
+        redirect_to store_path(store)
+    end
+
     private
 
     def indoor_plants_params
