@@ -38,7 +38,7 @@ class IndoorPlantsController < ApplicationController
             redirect_to store_path(store)
         else
             flash[:message] = "You do not have enough cash."
-            redirect_to store_path(indoor_plant)
+            redirect_to store_path(store)
         end
 
     end
