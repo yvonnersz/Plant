@@ -8,11 +8,11 @@ class CustomersController < ApplicationController
     end
 
     def create
-        @customer = Customer.find_by(:email => params[:customer][:email])
+        @customer = Customer.new(customer_params)
         if @customer.valid?
-            @customer = Customer.create(customer_params)
+            @customer.save
             session[:customer_id] = @customer.id
-            render :'/customers/new'
+            redirect_to customer_path(@customer)
         elsif 
             render :'/customers/new'
         end

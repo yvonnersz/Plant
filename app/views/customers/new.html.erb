@@ -10,13 +10,13 @@
 <div class="form">
 <%= form_for(@customer, url:'/signup') do |f| %>
 
-    <%= f.email_field :email, placeholder: "Please enter an email." %>
+    <%= f.email_field :email, placeholder: "Please enter an email.", required: true %>
     <br><br>
 
-    <%= f.password_field :password, placeholder: "Please enter in a password." %>
+    <%= f.password_field :password, placeholder: "Please enter in a password.", required: true %>
     <br><br>
 
-    <%= f.text_field :name, placeholder: "What would you like to be called?" %>
+    <%= f.text_field :name, placeholder: "What would you like to be called?", required: true %>
     <br><br>
 
     <%= f.number_field :cash, placeholder: "How much cash do you have?" %>
