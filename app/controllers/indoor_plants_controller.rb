@@ -35,8 +35,12 @@ class IndoorPlantsController < ApplicationController
 
     def update
         @indoor_plant = IndoorPlant.find_by(:id => params[:id])
-        @indoor_plant.update(indoor_plants_params)
-        redirect_to store_path(@indoor_plant.store)
+
+        if @indoor_plant.update(indoor_plants_params)
+            redirect_to store_path(@indoor_plant.store)
+        else
+            render '/indoor_plants/edit'
+        end
     end
 
     def destroy
@@ -62,7 +66,7 @@ class IndoorPlantsController < ApplicationController
     private
 
     def indoor_plants_params
-        params.require(:indoor_plant).permit(:name, :price, :store_id, :image, customer_ids: [])
+        params.require(:indoor_plant).permit(:name, :price, :image, :store_id, customer_ids: [])
     end
 
 end
