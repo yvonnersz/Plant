@@ -1,30 +1,5 @@
-<div class="error">
-    <% if @indoor_plant.errors.any? %>
-        <% @indoor_plant.errors.full_messages.each do |message| %>
-            <%= message %>.<br>
-        <% end %><br>
-    <% end %>
-</div>
-
 <div class = "content">
-    <div class = "form">
-    <%= form_for(@indoor_plant) do |f| %>
-
-        <%= f.hidden_field :store_id %>
-
-        <%= f.text_field :name, placeholder: "What is the name of the plant you want to sell?" %>
-        <br><br>
-
-        <%= f.text_field :price, placeholder: "How much would you like to sell the plant for?" %>
-        <br><br>
-
-        <%= f.text_field :image, placeholder: "Please include the image source for the plant." %>
-        <br><br>
-        
-        <%= f.submit "Submit" %>
-
-    <% end %>
-    </div>
+   <%= render 'form' %>
 </div>
 
 <div class="special">
