@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#fbcreate'
 
   get '/indoor_plants/:id/buy' => 'indoor_plants#buy'
-  get '/indoor_plants/:id/buy' => 'indoor_plants#buy'
 
   resources :customers, except: [:index] do
     resources :stores, only: [:index, :show, :new, :create]

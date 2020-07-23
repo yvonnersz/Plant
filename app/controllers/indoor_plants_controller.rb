@@ -23,29 +23,6 @@ class IndoorPlantsController < ApplicationController
         @indoor_plant = IndoorPlant.find_by(:id => params[:id])
     end
 
-    def buy
-        customer = Customer.find_by(:id => session[:customer_id])
-        indoor_plant = IndoorPlant.find_by(:id => params[:id])
-        store = IndoorPlant.find_by(:id => params[:id]).store
-
-        if indoor_plant.price <= customer.cash
-            
-            customer.update(:cash => customer.cash - indoor_plant.price)
-            customer.indoor_plants << indoor_plant
-
-            store.income = (store.income.nil? ? 0:store.income)
-
-            store.update(:income => store.income + indoor_plant.price)
-
-            flash[:message] = "You have successfully bought the plant."
-            redirect_to store_path(store)
-        else
-            flash[:message] = "You do not have enough cash."
-            redirect_to store_path(store)
-        end
-
-    end
-
     def edit
         @indoor_plant = IndoorPlant.find_by(:id => params[:id])
     end
@@ -63,6 +40,17 @@ class IndoorPlantsController < ApplicationController
         @indoor_plant.destroy
 
         redirect_to store_path(store)
+    end
+
+    def buy
+        @indoor_plant = IndoorPlant.find_by(:id => params[:id])
+        if @indoor_plant.buy(current_customer)
+            flash[:message] = "You have successfully bought the plant."
+            redirect_to store_path(@indoor_plant.store)
+        else
+            flash[:message] = "You do not have enough cash."
+            redirect_to store_path(@indoor_plant.store)
+        end
     end
 
     private
