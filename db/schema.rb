@@ -43,12 +43,11 @@ ActiveRecord::Schema.define(version: 2020_07_21_051808) do
 
   create_table "stores", force: :cascade do |t|
     t.string "name"
+    t.string "bio"
     t.integer "income"
-    t.integer "prestige"
+    t.integer "customer_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "customer_id", null: false
-    t.string "bio"
     t.index ["customer_id"], name: "index_stores_on_customer_id"
   end
 
