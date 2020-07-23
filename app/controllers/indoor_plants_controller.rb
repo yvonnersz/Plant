@@ -15,8 +15,14 @@ class IndoorPlantsController < ApplicationController
     end
 
     def create
-        @indoor_plant = IndoorPlant.create(indoor_plants_params)
-        redirect_to store_path(@indoor_plant.store)
+        @indoor_plant = IndoorPlant.new(indoor_plants_params)
+        
+        if @indoor_plant.valid?
+            @indoor_plant.save
+            redirect_to store_path(@indoor_plant.store)
+        else
+            render :'/indoor_plants/new'
+        end
     end
 
     def show
