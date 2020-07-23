@@ -1,18 +1,4 @@
-<div class="form">
-
-<%= form_for(@store) do |f| %>
-
-    <%= f.text_field :name, placeholder: "Please enter in a shop name." %>
-    <br><br>
-
-    <%= f.text_field :bio, placeholder: "Please enter a bio for your shop." %>
-    <br><br>
-
-    <%= f.submit "Submit" %>
-
-<% end %>
-
-</div>
+<%= render 'form' %>
 
 <div class="special">
     <%= link_to "Delete Store", @store, method: :delete, data: { confirm: "Are you sure you want to delete this Store?" } %>
