@@ -24,7 +24,6 @@ class StoresController < ApplicationController
         elsif 
             render :'/stores/new'
         end
-        
     end
 
     def show
@@ -38,29 +37,25 @@ class StoresController < ApplicationController
     def update
         @store = Store.find_by(:id => params[:id])
         @store.update(store_params)
-        redirect_to @store
+
+        if @store.valid?
+            redirect_to store_path(@store)
+        else
+            render :'/stores/new'
+        end
     end
 
     def destroy
         @store = Store.find_by(:id => params[:id])
-        
-        if @store.indoor_plants.empty? == true
-            @store.destroy
-            redirect_to stores_path
-        else
-            @store.indoor_plants.each do |plant|
-                plant.destroy
-            end
-            
-            @store.destroy
-            redirect_to stores_path
-        end
+        @store.indoor_plants.each {|plant| plant.destroy}
+        @store.destroy
+        redirect_to stores_path
     end
 
     private
 
     def store_params
-        params.require(:store).permit(:name, :prestige, :store_id, :bio)
+        params.require(:store).permit(:name, :bio, :store_id)
     end
 
 end
