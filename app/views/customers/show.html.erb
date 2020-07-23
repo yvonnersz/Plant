@@ -1,13 +1,11 @@
 <div class="content">
-
-<h2>You own <%= pluralize(@customer.indoor_plants.count, 'plant') %>.</h2>
-<% @customer.indoor_plants.each do |plant| %>
-    <p><%= plant.name %></p>
-<% end %>
-
+    <h2>You own <%= pluralize(@customer.indoor_plants.count, 'plant') %>.</h2>
+    <% @customer.indoor_plants.each do |plant| %>
+        <p><%= plant.name %></p>
+    <% end %>
 </div>
 
 <div class="special">
-<%= link_to 'My Shops', customer_stores_path(@customer) %>
-<%= link_to "Your balance is $#{@customer.cash}", edit_customer_path %>
+    <%= link_to 'My Shops', customer_stores_path(@customer) %>
+    <%= link_to "Your balance is $#{@customer.cash}", edit_customer_path %>
 </div>
