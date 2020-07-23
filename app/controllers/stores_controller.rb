@@ -3,13 +3,8 @@ class StoresController < ApplicationController
     before_action :require_login
 
     def index
-<<<<<<< HEAD
         if params[:user_id]
             @stores = User.find_by(:id => params[:user_id]).stores
-=======
-        if params[:user]
-            @stores = User.find_by(:id => params[:user]).stores
->>>>>>> 1893d1bb76e2ba56ad2f103d33779647a8a4764a
         else
             @stores = Store.all
         end
@@ -21,11 +16,7 @@ class StoresController < ApplicationController
 
     def create
         @store = Store.new(store_params)
-<<<<<<< HEAD
         @store.user_id = session[:user_id]
-=======
-        @store.user = session[:user]
->>>>>>> 1893d1bb76e2ba56ad2f103d33779647a8a4764a
 
         if @store.valid?
             @store.save

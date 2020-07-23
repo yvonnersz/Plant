@@ -4,11 +4,7 @@ class IndoorPlantsController < ApplicationController
     
     def index
         if params[:user_id]
-<<<<<<< HEAD
             @indoor_plants = User.find(params[:user_id]).indoor_plants
-=======
-            @indoor_plants = user.find(params[:user_id]).indoor_plants
->>>>>>> 1893d1bb76e2ba56ad2f103d33779647a8a4764a
         else
             @indoor_plants = IndoorPlant.all
         end
@@ -59,11 +55,7 @@ class IndoorPlantsController < ApplicationController
     def buy
         @indoor_plant = IndoorPlant.find_by(:id => params[:id])
         if @indoor_plant.buy(current_user)
-<<<<<<< HEAD
             flash[:message] = "Plant has been purchased."
-=======
-            flash[:message] = "You have successfully bought the plant."
->>>>>>> 1893d1bb76e2ba56ad2f103d33779647a8a4764a
             redirect_to store_path(@indoor_plant.store)
         else
             flash[:message] = "You do not have enough cash."
