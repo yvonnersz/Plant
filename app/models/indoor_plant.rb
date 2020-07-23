@@ -1,6 +1,5 @@
 class IndoorPlant < ApplicationRecord
   include ApplicationHelper
-  validates :name, uniqueness: true
 
   belongs_to :store
   has_many :customer_indoor_plants
