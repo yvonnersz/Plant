@@ -1,5 +1,6 @@
 class IndoorPlant < ApplicationRecord
   include ApplicationHelper
+  validates :cash, numericality: { greater_than_or_equal_to: 1 }
 
   belongs_to :store
   has_many :customer_indoor_plants
