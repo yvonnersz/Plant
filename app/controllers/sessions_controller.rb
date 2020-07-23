@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
             u.name = auth['info']['name']
             u.email = auth['info']['email']
             u.password = auth['uid'] #secure random hex
-            u.cash.empty? ? u.cash == 0 : u.cash = @customer.cash
+            u.cash.nil? ? u.cash = 0 : u.cash = @customer.cash
         end
         session[:customer_id] = @customer.id
         redirect_to customer_path(@customer)

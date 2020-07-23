@@ -22,13 +22,11 @@ ActiveRecord::Schema.define(version: 2020_07_16_031119) do
   create_table "customers", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
+    t.string "uid"
     t.string "name"
     t.integer "cash"
-    t.integer "prestige"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "uid"
-    t.string "image"
   end
 
   create_table "indoor_plants", force: :cascade do |t|
