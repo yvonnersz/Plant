@@ -1,15 +1,15 @@
 class SessionsController < ApplicationController
 
     def new
-        @customer = Customer.new
+        @user = User.new
         render '/login'
     end
 
     def create
-        if @customer = Customer.find_by(:email => params[:customer][:email])
-            if @customer.authenticate(params[:customer][:password])
-                session[:customer_id] = @customer.id
-                redirect_to customer_path(@customer)
+        if @user = User.find_by(:email => params[:user][:email])
+            if @user.authenticate(params[:user][:password])
+                session[:user_id] = @user.id
+                redirect_to user_path(@user)
             else
                 flash[:message] = "Incorrect password. Please try again."
                 redirect_to '/login'
@@ -21,14 +21,14 @@ class SessionsController < ApplicationController
     end
 
     def fbcreate
-        @customer = Customer.find_or_create_by(uid: auth['uid']) do |u|
+        @user = User.find_or_create_by(uid: auth['uid']) do |u|
             u.name = auth['info']['name']
             u.email = auth['info']['email']
             u.password = auth['uid'] #secure random hex
-            u.cash.nil? ? u.cash = 0 : u.cash = @customer.cash
+            u.cash.nil? ? u.cash = 0 : u.cash = @user.cash
         end
-        session[:customer_id] = @customer.id
-        redirect_to customer_path(@customer)
+        session[:user_id] = @user.id
+        redirect_to user_path(@user)
     end
 
     def destroy

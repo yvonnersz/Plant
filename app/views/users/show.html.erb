@@ -1,0 +1,11 @@
+<div class="content">
+    <h2>You own <%= pluralize(@user.indoor_plants.count, 'plant') %>.</h2>
+    <% @user.indoor_plants.each do |plant| %>
+        <p><%= plant.name %></p>
+    <% end %>
+</div>
+
+<div class="special">
+    <%= link_to 'My Shops', user_stores_path(@user) %>
+    <%= link_to "Your balance is $#{@user.cash}", edit_user_path %>
+</div>

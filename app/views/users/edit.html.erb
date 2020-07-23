@@ -1,13 +1,13 @@
 <div class="error">
-    <% if @customer.errors.any? %>
-        <% @customer.errors.full_messages.each do |message| %>
+    <% if @user.errors.any? %>
+        <% @user.errors.full_messages.each do |message| %>
             <%= message %>.<br>
         <% end %><br>
     <% end %>
 </div>
 
 <div class="form">
-    <%= form_for(@customer) do |f| %>
+    <%= form_for(@user) do |f| %>
         <%= f.text_field :name, placeholder: "What would you like to be called?" %><br><br>
         <%= f.number_field :cash, placeholder: "How much cash do you have?" %><br><br>        
         <%= f.submit "Submit" %>

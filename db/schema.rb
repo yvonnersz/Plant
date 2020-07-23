@@ -12,23 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_07_16_031119) do
 
-  create_table "customer_indoor_plants", force: :cascade do |t|
-    t.integer "customer_id", null: false
-    t.integer "indoor_plant_id", null: false
-    t.index ["customer_id"], name: "index_customer_indoor_plants_on_customer_id"
-    t.index ["indoor_plant_id"], name: "index_customer_indoor_plants_on_indoor_plant_id"
-  end
-
-  create_table "customers", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.string "uid"
-    t.string "name"
-    t.integer "cash"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "indoor_plants", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -43,14 +26,31 @@ ActiveRecord::Schema.define(version: 2020_07_16_031119) do
     t.string "name"
     t.string "bio"
     t.integer "income"
-    t.integer "customer_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["customer_id"], name: "index_stores_on_customer_id"
+    t.index ["user_id"], name: "index_stores_on_user_id"
   end
 
-  add_foreign_key "customer_indoor_plants", "customers"
-  add_foreign_key "customer_indoor_plants", "indoor_plants"
+  create_table "user_indoor_plants", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "indoor_plant_id", null: false
+    t.index ["indoor_plant_id"], name: "index_user_indoor_plants_on_indoor_plant_id"
+    t.index ["user_id"], name: "index_user_indoor_plants_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.string "uid"
+    t.string "name"
+    t.integer "cash"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "indoor_plants", "stores"
-  add_foreign_key "stores", "customers"
+  add_foreign_key "stores", "users"
+  add_foreign_key "user_indoor_plants", "indoor_plants"
+  add_foreign_key "user_indoor_plants", "users"
 end
