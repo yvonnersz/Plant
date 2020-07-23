@@ -1,10 +1,12 @@
 class CustomersController < ApplicationController
+
     def new
         @customer = Customer.new
     end
 
     def create
         @customer = Customer.new(customer_params)
+        
         if @customer.valid?
             @customer.save
             session[:customer_id] = @customer.id
@@ -25,7 +27,12 @@ class CustomersController < ApplicationController
     def update
         @customer = Customer.find_by(:id => params[:id])
         @customer.update(customer_params)
-        redirect_to @customer
+        
+        if @customer.valid?
+            redirect_to @customer
+        else
+            render :'/customers/edit'
+        end
     end
 
     private
@@ -33,4 +40,5 @@ class CustomersController < ApplicationController
     def customer_params
         params.require(:customer).permit(:email, :password, :name, :cash)
     end
+    
 end
