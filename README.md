@@ -32,7 +32,7 @@ Specs:
 
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
       # /indoor_plants/#{plant.id}/buy
-      # indoor_plant.buy
+      # indoor_plant.buy(current_customer)
 
 - [x] Include signup
       # Has FaceBook and email option for signup.
