@@ -1,71 +1,50 @@
 <div class="content">
-
-<% if params[:customer_id] %>
-
-<% if @stores.empty? %>
-
-<p>You do not own any shops.</p>
-
-<% else %>
-
-<table>
-
-  <tr>
-    <th>Store</th>
-    <th>Plants</th>
-    <th>Income</th>
-    <th>Plants Sold</th>
-    <th>Most Sold Plant</th>
-  </tr>
-
-    <% @stores.each.with_index(1) do |store, index| %>
+  <% if params[:customer_id] %>
+    <% if @stores.empty? %>
+      <p>You do not own any shops.</p>
+    <% else %>
+      <table>
         <tr>
-        <td><%= link_to store.name, customer_store_path(store.customer, store) %></td>
-        <td><%= store.indoor_plants.count %></td>
-
-        <td>
-          <% if store.income.nil? %>
-            <%= 0 %>
-          <% else %>
-            <%= store.income %>
-          <% end %>
-        </td>
-
-        <td><%= store.plants_sold %></td>
-        <td><%= store.most_sold_plant %></td>
+          <th>Store</th>
+          <th>Plants</th>
+          <th>Income</th>
+          <th>Plants Sold</th>
+          <th>Most Sold Plant</th>
         </tr>
+
+        <% @stores.each.with_index(1) do |store, index| %>
+          <tr>
+          <td><%= link_to store.name, customer_store_path(store.customer, store) %></td>
+          <td><%= store.indoor_plants.count %></td>
+          <td><%= store.income.nil? ? 0:store.income %></td>
+          <td><%= store.plants_sold %></td>
+          <td><%= store.most_sold_plant %></td>
+          </tr>
+        <% end %>
+      </table>
     <% end %>
 
-</table>
+  <div class="special">
+  <%= link_to 'Create New Store', new_customer_store_path %>
+  </div>
 
-<% end %>
+  <% else %>
+    <table>
+      <tr>
+          <th>Store</th>
+          <th>Owner</th>
+          <th>Plants Sold</th>
+          <th>Most Sold Plant</th>
+      </tr>
 
-</div>
-
-<div class="special">
-<%= link_to 'Create New Store', new_customer_store_path %>
-</div>
-
-<% else %>
-
-<table>
-
-<tr>
-    <th>Store</th>
-    <th>Owner</th>
-    <th>Plants Sold</th>
-    <th>Most Sold Plant</th>
-</tr>
-
-<% @stores.each do |store| %>
-  <tr>
-  <td><%= link_to store.name, store_path(store) %></td>
-  <td><%= store.customer.name %></td>
-  <td><%= store.plants_sold %></td>
-  <td><%= store.most_sold_plant %></td>
-
-
-  <tr>
+      <% @stores.each do |store| %>
+        <tr>
+          <td><%= link_to store.name, store_path(store) %></td>
+          <td><%= store.customer.name %></td>
+          <td><%= store.plants_sold %></td>
+          <td><%= store.most_sold_plant %></td>
+        </tr>
+      <% end %>
+    </table>
   <% end %>
-
-  <% end %>
+</div>
