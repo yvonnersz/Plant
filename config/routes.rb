@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   get '/about' => 'application#about'
 
-  get '/signup' => 'customers#new'
-  post '/signup' => 'customers#create'
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get '/indoor_plants/:id/buy' => 'indoor_plants#buy'
 
-  resources :customers, except: [:index] do
+  resources :users, except: [:index] do
     resources :stores, only: [:index, :show, :new, :create]
   end
   

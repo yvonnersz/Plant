@@ -3,8 +3,8 @@ class IndoorPlantsController < ApplicationController
     before_action :require_login
     
     def index
-        if params[:customer_id]
-            @indoor_plants = Customer.find(params[:customer_id]).indoor_plants
+        if params[:user_id]
+            @indoor_plants = user.find(params[:user_id]).indoor_plants
         else
             @indoor_plants = IndoorPlant.all
         end
@@ -54,7 +54,7 @@ class IndoorPlantsController < ApplicationController
 
     def buy
         @indoor_plant = IndoorPlant.find_by(:id => params[:id])
-        if @indoor_plant.buy(current_customer)
+        if @indoor_plant.buy(current_user)
             flash[:message] = "You have successfully bought the plant."
             redirect_to store_path(@indoor_plant.store)
         else
@@ -66,7 +66,7 @@ class IndoorPlantsController < ApplicationController
     private
 
     def indoor_plants_params
-        params.require(:indoor_plant).permit(:name, :price, :image, :store_id, customer_ids: [])
+        params.require(:indoor_plant).permit(:name, :price, :image, :store_id, user_ids: [])
     end
 
 end

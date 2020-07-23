@@ -1,14 +1,14 @@
 class Store < ApplicationRecord
     validates :name, uniqueness: true
     
-    belongs_to :customer
+    belongs_to :user
     has_many :indoor_plants
 
     def plants_sold
         @x = []
 
-        Customer.all.each do |customer|
-            customer.indoor_plants.collect {|plant| @x << plant if plant.store_id == self.id}
+        User.all.each do |user|
+            user.indoor_plants.collect {|plant| @x << plant if plant.store_id == self.id}
         end
 
         @x.count

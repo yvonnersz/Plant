@@ -1,18 +1,18 @@
-yvonne = Customer.create(
+yvonne = User.create(
     :email => "yvonne@gmail.com",
     :password => "password",
     :name => "Yvonne",
     :cash => "1000"
 )
 
-nguyen = Customer.create(
+nguyen = User.create(
     :email => "nguyen@gmail.com",
     :password => "password",
     :name => "Nguyen",
     :cash => "1000"
 )
 
-simon = Customer.create(
+simon = User.create(
     :email => "simon@gmail.com",
     :password => "password",
     :name => "Simon",
@@ -21,25 +21,25 @@ simon = Customer.create(
 
 philodendron = Store.create(
     :name => "Philodendron",
-    :customer_id => 1,
+    :user_id => 1,
     :bio => "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens."
 )
 
 pothos = Store.create(
     :name => "Pothos",
-    :customer_id => 1,
+    :user_id => 1,
     :bio => "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens."
 )
 
 fern = Store.create(
     :name => "Fern",
-    :customer_id => 2,
+    :user_id => 2,
     :bio => "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens."
 )
 
 monstera = Store.create(
     :name => "Monstera",
-    :customer_id => 3,
+    :user_id => 3,
     :bio => "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens."
 )
 

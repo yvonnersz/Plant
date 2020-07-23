@@ -1,5 +1,5 @@
 <div class="content">
-  <% if params[:customer_id] %>
+  <% if params[:user_id] %>
     <% if @stores.empty? %>
       <p>You do not own any shops.</p>
     <% else %>
@@ -14,7 +14,7 @@
 
         <% @stores.each.with_index(1) do |store, index| %>
           <tr>
-          <td><%= link_to store.name, customer_store_path(store.customer, store) %></td>
+          <td><%= link_to store.name, user_store_path(store.user, store) %></td>
           <td><%= store.indoor_plants.count %></td>
           <td><%= store.income.nil? ? 0:store.income %></td>
           <td><%= store.plants_sold %></td>
@@ -25,7 +25,7 @@
     <% end %>
 
   <div class="special">
-  <%= link_to 'Create New Store', new_customer_store_path %>
+  <%= link_to 'Create New Store', new_user_store_path %>
   </div>
 
   <% else %>
@@ -40,7 +40,7 @@
         <tr>
           <td><%= link_to store.name, store_path(store) %></td>
           <td><%= store.indoor_plants.count %></td>
-          <td><%= store.customer.name %></td>
+          <td><%= store.user.name %></td>
         </tr>
       <% end %>
     </table>
