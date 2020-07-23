@@ -32,17 +32,15 @@
     <table>
       <tr>
           <th>Store</th>
+          <th>Plants</th>
           <th>Owner</th>
-          <th>Plants Sold</th>
-          <th>Most Sold Plant</th>
       </tr>
 
       <% @stores.each do |store| %>
         <tr>
           <td><%= link_to store.name, store_path(store) %></td>
+          <td><%= store.indoor_plants.count %></td>
           <td><%= store.customer.name %></td>
-          <td><%= store.plants_sold %></td>
-          <td><%= store.most_sold_plant %></td>
         </tr>
       <% end %>
     </table>
