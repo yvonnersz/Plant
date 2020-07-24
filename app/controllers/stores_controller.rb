@@ -6,7 +6,11 @@ class StoresController < ApplicationController
         if params[:user_id]
             @stores = User.find_by(:id => params[:user_id]).stores
         else
-            @stores = Store.all
+            if !params[:user].blank?
+                @stores = Store.by_user(params[:user])
+            elsif
+                @stores = Store.all
+            end
         end
     end
 

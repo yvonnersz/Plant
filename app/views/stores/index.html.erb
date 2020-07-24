@@ -43,6 +43,14 @@
           <td><%= store.user.name %></td>
         </tr>
       <% end %>
-    </table>
+    </table><br><br>    
+
+    <div class="filter">
+      <%= form_tag("/stores", method: "get") do %>
+        <%= select_tag "user", options_from_collection_for_select(User.all, "id", "name"), include_blank: true %>
+        <%= submit_tag("Filter", :style => "width:100px; height: 20px;") %>
+      <% end %>
+    </div>
+
   <% end %>
 </div>
