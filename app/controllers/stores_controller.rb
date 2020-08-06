@@ -5,8 +5,8 @@ class StoresController < ApplicationController
     def index
         @users = User.all
         
-        if params[:user_id]
-            @stores = User.find_by(:id => params[:user_id]).stores
+        if !params[:user].blank?
+            @stores = User.find_by(:id => params[:user]).stores
         else
             @stores = Store.all
         end
