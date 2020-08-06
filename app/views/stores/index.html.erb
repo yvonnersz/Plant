@@ -17,7 +17,7 @@
           <td><%= link_to store.name, user_store_path(store.user, store) %></td>
           <td><%= store.indoor_plants.count %></td>
           <td><%= store.income.nil? ? 0:store.income %></td>
-          <td><%= store.plants_sold %></td>
+          <td><%= store.plants_sold.count %></td>
           <td><%= store.most_sold_plant %></td>
           </tr>
         <% end %>

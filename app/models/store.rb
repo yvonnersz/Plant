@@ -11,7 +11,7 @@ class Store < ApplicationRecord
             user.indoor_plants.collect {|plant| @x << plant if plant.store_id == self.id}
         end
 
-        @x.count
+        @x
     end
 
     def most_sold_plant

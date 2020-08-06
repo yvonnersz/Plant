@@ -56,6 +56,11 @@ class StoresController < ApplicationController
         redirect_to stores_path
     end
 
+    def plants_sold
+        @store = Store.find_by(:id => params[:id])
+        render :plants_sold
+    end
+
     private
 
     def store_params
