@@ -34,6 +34,9 @@ Specs:
       # /indoor_plants/#{plant.id}/buy
       # indoor_plant.buy(current_customer)
 
+      # /indoor_plants/by_price
+      # indoor_plant.by_price(num1, num2)
+
 - [x] Include signup
       # Has FaceBook and email option for signup.
 
@@ -41,7 +44,7 @@ Specs:
       # Has FaceBook and email option for login.
 
 - [x] Include logout
-      # Can successfull log out.
+      # Can successfully log out.
 
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth)
       # Use FaceBook OmniAuth to signup and login.
@@ -57,7 +60,7 @@ Specs:
       # Front-end validation checks.
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [x] The application is pretty DRY
+- [x] Limited logic in controllers
+- [x] Views use helper methods if appropriate
+- [x] Views use partials if appropriate
