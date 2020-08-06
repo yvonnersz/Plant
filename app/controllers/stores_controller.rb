@@ -7,6 +7,8 @@ class StoresController < ApplicationController
         
         if !params[:user].blank?
             @stores = User.find_by(:id => params[:user]).stores
+        elsif params[:user_id]
+            @stores = User.find_by(:id => params[:user_id]).stores
         else
             @stores = Store.all
         end
