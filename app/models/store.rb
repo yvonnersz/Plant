@@ -15,11 +15,11 @@ class Store < ApplicationRecord
     end
 
     def most_sold_plant
-        h = @x.group_by(&:itself)
-        k, v = h.first
-        y = h.map {|k, v| [k.name, v.length]}.to_h
-        z = y.sort_by {|k, v| -v}.to_h
-        z.keys[0]
+        grouped_array = @x.group_by(&:itself)
+        key, value = grouped_array.first
+        best_selling_hash = grouped_array.map {|key, value| [key.name, value.length]}.to_h
+        inverted_hash = best_selling_hash.sort_by {|key, value| -value}.to_h
+        inverted_hash.keys[0]
     end
 
     def self.by_user(user_id)
