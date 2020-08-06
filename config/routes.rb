@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get '/stores/:id/plants_sold' => 'stores#plants_sold', as: :plants_sold
 
+  post '/indoor_plants/by_price' => 'indoor_plants#index'
+
   resources :users, except: [:index] do
     resources :stores, only: [:index, :show, :new, :create]
   end

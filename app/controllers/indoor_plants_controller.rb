@@ -3,8 +3,14 @@ class IndoorPlantsController < ApplicationController
     before_action :require_login
     
     def index
-        if params[:user_id]
-            @indoor_plants = User.find(params[:user_id]).indoor_plants
+        if !params[:price].blank?
+            if params[:price] == "$"
+                @indoor_plants = IndoorPlant.by_price(0, 5)
+            elsif params[:price] == "$$"
+                @indoor_plants = IndoorPlant.by_price(6, 20)
+            elsif params[:price] == "$$$"
+                @indoor_plants = IndoorPlant.by_price(21, 100000)
+            end
         else
             @indoor_plants = IndoorPlant.all
         end

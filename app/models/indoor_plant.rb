@@ -15,5 +15,9 @@ class IndoorPlant < ApplicationRecord
       self.store.update(:income => store.income + self.price)
     end
   end
+
+  def self.by_price(num1, num2)
+    where("price BETWEEN ? AND ?", num1, num2)
+  end
  
 end

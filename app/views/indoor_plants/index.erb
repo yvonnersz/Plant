@@ -3,3 +3,10 @@
         <p><b><%= plant.name %></b> by <em><%= plant.store.name %></em></p>
     <% end %>
 </div>
+
+<div class="filter">
+    <%= form_tag("/indoor_plants/by_price", method: "POST") do %>
+        <%= select_tag "price", options_for_select(["$$$", "$$", "$"]), include_blank: true %>
+        <%= submit_tag("Filter", :style => "width:100px; height: 20px;") %>
+    <% end %>
+</div>
