@@ -1,9 +1,9 @@
 <div class="content">
-    <% if @store.plants_sold.nil? %>
-        You have not sold any plants yet.
+    <% if @store.plants_sold.empty? %>
+        <p>You have not sold any plants yet.</p>
     <% else %>
         <% @store.plants_sold.each do |plant| %>
-            <%= plant.name %><br>
+            <p><%= plant.name %></p>
         <% end %>
     <% end %>
 </div>
