@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get '/indoor_plants/:id/buy' => 'indoor_plants#buy'
 
-  get '/stores/:id/plants_sold' => 'stores#plants_sold'
+  get '/stores/:id/plants_sold' => 'stores#plants_sold', as: :plants_sold
 
   resources :users, except: [:index] do
     resources :stores, only: [:index, :show, :new, :create]
