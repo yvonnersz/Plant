@@ -3,14 +3,12 @@ class StoresController < ApplicationController
     before_action :require_login
 
     def index
+        @users = User.all
+        
         if params[:user_id]
             @stores = User.find_by(:id => params[:user_id]).stores
         else
-            if !params[:user].blank?
-                @stores = Store.by_user(params[:user])
-            elsif
-                @stores = Store.all
-            end
+            @stores = Store.all
         end
     end
 

@@ -21,9 +21,4 @@ class Store < ApplicationRecord
         inverted_hash = best_selling_hash.sort_by {|key, value| -value}.to_h
         inverted_hash.keys[0]
     end
-
-    def self.by_user(user_id)
-        where(user: user_id)
-    end
-
 end

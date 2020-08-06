@@ -26,6 +26,6 @@ Rails.application.routes.draw do
     resources :indoor_plants, except: [:index, :show]
   end
 
-  resources :indoor_plants, except: [:index, :show]
+  resources :indoor_plants, except: [:show]
 
 end
