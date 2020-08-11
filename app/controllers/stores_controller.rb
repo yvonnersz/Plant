@@ -34,9 +34,9 @@ class StoresController < ApplicationController
         @store = Store.find_by(:id => params[:id])
 
         if !params[:indoor_plant].blank?
-            @indoor_plants = IndoorPlant.search(params[:indoor_plant])
+            @indoor_plants = @store.indoor_plants.search(params[:indoor_plant])
         else
-            @indoor_plants = IndoorPlant.all
+            @indoor_plants = @store.indoor_plants
         end
     end
 

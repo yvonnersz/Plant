@@ -21,7 +21,7 @@ class IndoorPlant < ApplicationRecord
   end
 
   def self.search(indoor_plant)
-    where("name: indoor_plant) 
+    where(name: indoor_plant) 
   end
  
 end
