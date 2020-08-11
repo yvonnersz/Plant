@@ -4,8 +4,8 @@
 
 <div class="filter">
 <%= form_tag("/stores/#{@store.id}", method: "POST") do %>
-  <%= text_field_tag "indoor_plant" %>
-  <%= submit_tag("Filter", :style => "width:100px; height: 20px;") %>
+  <%= text_field_tag :indoor_plant, nil, :class => 'plant_filter' %>
+  <%= submit_tag("Filter by Plant", :style => "width:100px; height: 20px;") %>
 <% end %>
 </div>
 
