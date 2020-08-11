@@ -21,4 +21,5 @@ class Store < ApplicationRecord
         inverted_hash = best_selling_hash.sort_by {|key, value| -value}.to_h
         inverted_hash.keys[0]
     end
+
 end

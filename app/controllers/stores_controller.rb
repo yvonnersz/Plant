@@ -5,9 +5,9 @@ class StoresController < ApplicationController
     def index
         @users = User.all
         
-        if !params[:user].blank?
-            @stores = User.find_by(:id => params[:user]).stores
-        elsif params[:user_id]
+        # if !params[:user].blank?
+        #     @stores = User.find_by(:id => params[:user]).stores
+        if params[:user_id]
             @stores = User.find_by(:id => params[:user_id]).stores
         else
             @stores = Store.all
@@ -32,6 +32,12 @@ class StoresController < ApplicationController
 
     def show
         @store = Store.find_by(:id => params[:id])
+
+        if !params[:indoor_plant].blank?
+            @indoor_plants = IndoorPlant.search(params[:indoor_plant])
+        else
+            @indoor_plants = IndoorPlant.all
+        end
     end
 
     def edit

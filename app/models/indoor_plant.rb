@@ -19,5 +19,9 @@ class IndoorPlant < ApplicationRecord
   def self.by_price(num1, num2)
     where("price BETWEEN ? AND ?", num1, num2)
   end
+
+  def self.search(indoor_plant)
+    where("name: indoor_plant) 
+  end
  
 end

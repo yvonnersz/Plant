@@ -2,6 +2,13 @@
     <p><%= flash[:message] %></p>
 </div>
 
+<div class="filter">
+<%= form_tag("/stores/#{@store.id}", method: "POST") do %>
+  <%= text_field_tag "indoor_plant" %>
+  <%= submit_tag("Filter", :style => "width:100px; height: 20px;") %>
+<% end %>
+</div>
+
 <div class="content">
     <h2><%= @store.name %></h2>
 

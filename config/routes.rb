@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   post '/indoor_plants/by_price' => 'indoor_plants#index'
 
+  post '/stores/:id' => 'stores#show'
+
   resources :users, except: [:index] do
     resources :stores, only: [:index, :show, :new, :create]
   end

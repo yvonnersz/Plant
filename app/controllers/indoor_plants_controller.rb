@@ -23,8 +23,7 @@ class IndoorPlantsController < ApplicationController
     def create
         @indoor_plant = IndoorPlant.new(indoor_plants_params)
         
-        if @indoor_plant.valid?
-            @indoor_plant.save
+        if @indoor_plant.save
             redirect_to store_path(@indoor_plant.store)
         else
             render :'/indoor_plants/new'
