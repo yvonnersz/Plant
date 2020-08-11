@@ -1,6 +1,6 @@
 <div class="content">
     <% @indoor_plants.each do |plant| %>
-        <p><b><%= plant.name %></b> by <em><%= plant.store.name %></em></p>
+        <p><b><%= plant.name %></b> by <em><%= link_to plant.store.name, store_path(plant.store) %></em></p>
     <% end %>
 </div>
 
