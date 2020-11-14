@@ -1,4 +1,4 @@
-![ScreenShot](public\labsprout-screenshot.png)
+![ScreenShot](https://github.com/yvonnersz/Plant/blob/master/public/labsprout-screenshot.png)
 
 # Installation Instructions
 
