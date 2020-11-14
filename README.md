@@ -26,5 +26,5 @@ A User can create Stores to sell their Indoor Plants to other users. Once a stor
 Yvonne Pham
 - Github: [@yvonnersz](https://github.com/yvonnersz) 
 - LinkedIn: [@yvonne-pham](https://www.linkedin.com/in/yvonne-pham/)
-- Blog
-- Demo Video
+- [Blog](https://yvonnersz.github.io/rails_portfolio_project)
+- [Demo Video](https://youtu.be/jT9m4nIJvMQ)
